@@ -18,10 +18,11 @@ export default function TradePrice({ price, showInverted, setShowInverted }: Tra
   const formattedPrice = showInverted ? price?.toSignificant(6) : price?.invert()?.toSignificant(6)
 
   const show = Boolean(price?.baseCurrency && price?.quoteCurrency)
+  console.log(price?.baseCurrency?.symbol)
   const label = showInverted
     ? `${price?.quoteCurrency?.symbol} per ${price?.baseCurrency?.symbol}`
     : `${price?.baseCurrency?.symbol} per ${price?.quoteCurrency?.symbol}`
-
+  console.log('formattedPrice',formattedPrice)
   return (
     <Text
       fontWeight={500}
